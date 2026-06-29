@@ -5,108 +5,32 @@
 <title>Modern Calculator</title>
 
 <style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    margin:0;
-    background:#121212;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    font-family:Arial,sans-serif;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
 }
 
 .box{
-    width:320px;
-    background:#1f1f1f;
-    padding:20px;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,.5);
+width:340px;
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
 h2{
-    color:white;
-    text-align:center;
-}
-
-input,select,button{
-    width:100%;
-    padding:15px;
-    margin:10px 0;
-    border:none;
-    border-radius:12px;
-    font-size:18px;
-    box-sizing:border-box;
-}
-
-input,select{
-    background:#2b2b2b;
-    color:white;
-}
-
-button{
-    background:#00b894;
-    color:white;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-button:hover{
-    background:#00a383;
-}
-
-#result{
-    color:#00ff99;
-    text-align:center;
-    font-size:24px;
-    margin-top:15px;
-}
-</style>
-
-</head>
-
-<body>
-
-<div class="box">
-
-<h2>Calculator</h2>
-
-<input type="number" id="a" placeholder="First Number">
-
-<select id="op">
-<option>+</option>
-<option>-</option>
-<option>*</option>
-<option>/</option>
-</select>
-
-<input type="number" id="b" placeholder="Second Number">
-
-<button onclick="calc()">Calculate</button>
-
-<div id="result">Result</div>
-
-</div>
-
-<script>
-
-function calc(){
-
-let a=Number(document.getElementById("a").value);
-let b=Number(document.getElementById("b").value);
-let op=document.getElementById("op").value;
-
-let r;
-
-if(op=="+") r=a+b;
-if(op=="-") r=a-b;
-if(op=="*") r=a*b;
-if(op=="/") r=a/b;
-
-document.getElementById("result").innerHTML="Result: "+r;
-
-}
-
-</script>
-
-</body>
-</html>
+color:white;
+text-align:center;
+margin-bottom:20

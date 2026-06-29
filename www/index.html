@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My Calculator</title>
-</head>
-<body>
-<h2>Calculator</h2>
-<input type="number" id="a">
-<select id="op">
-<option>+</option>
-<option>-</option>
-<option>*</option>
-<option>/</option>
-</select>
-<input type="number" id="b">
-<button onclick="calc()">=</button>
-<h3 id="result"></h3>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Calculator</title>
 
-<script>
-function calc(){
-let a=Number(document.getElementById("a").value);
-let b=Number(document.getElementById("b").value);
-let op=document.getElementById("op").value;
-let r;
-if(op=="+") r=a+b;
-if(op=="-") r=a-b;
-if(op=="*") r=a*b;
-if(op=="/") r=a/b;
-document.getElementById("result").innerHTML="Result: "+r;
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
-</script>
-</body>
-</html>
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#1e3c72,#2a5298);
+}
+
+.box{
+width:340px;
+padding:25px;
+border-radius:20px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+h2{
+color:white;
+text-align:center;
+margin-bottom:20
