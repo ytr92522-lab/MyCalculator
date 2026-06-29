@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Calculator</title>
+</head>
+<body>
+<h2>Calculator</h2>
+<input type="number" id="a">
+<select id="op">
+<option>+</option>
+<option>-</option>
+<option>*</option>
+<option>/</option>
+</select>
+<input type="number" id="b">
+<button onclick="calc()">=</button>
+<h3 id="result"></h3>
+
+<script>
+function calc(){
+let a=Number(document.getElementById("a").value);
+let b=Number(document.getElementById("b").value);
+let op=document.getElementById("op").value;
+let r;
+if(op=="+") r=a+b;
+if(op=="-") r=a-b;
+if(op=="*") r=a*b;
+if(op=="/") r=a/b;
+document.getElementById("result").innerHTML="Result: "+r;
+}
+</script>
+</body>
+</html>
