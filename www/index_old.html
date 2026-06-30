@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Calculator</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+html, body{
+margin:0;
+padding:0;
+width:100%;
+height:100%;
+background:#111827;
+overflow:hidden;
+}
+}
+
+.calculator{
+width:100vw;
+height:100vh;
+background:#1f2937;
+padding:15px;
+border-radius:0;
+box-shadow:none;
+display:flex;
+flex-direction:column;
+}
+}
+
+#display{
+width:100%;
+height:140px;
+font-size:48px;
+text-align:right;
+border:none;
+outline:none;
+border-radius:15px;
+padding:20px;
+background:#0f172a;
+color:#fff;
+margin-bottom:20px;
+}
+
+
+.buttons{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+
+button{
+height:60px;
+border:none;
+border-radius:12px;
+font-size:22px;
+cursor:pointer;
+transition:.2s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.number{
+background:#374151;
+color:#fff;
+}
+
+.operator{
+background:#f59e0b;
+color:#fff;
+}
+
+.equal{
+background:#10b981;
+color:#fff;
+}
+
+.clear{
+background:#ef4444;
+color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+
+<input type="text" id="display" readonly>
+
+<div class="buttons"><button class="clear" onclick="clr()">C</button>
+<button class="operator" onclick="backspace()">⌫</button>
+<button class="operator" onclick="percent()">%</button>
+<button class="operator" onclick="add('/')">÷</button>
+
+<button class="number" onclick="add('7')">7</button>
+<button class="number" onclick="add('8')">8</button>
+<button class="number" onclick="add('9')">9</button>
+<button class="operator" onclick="add('*')">×</button>
+
+<button class="number" onclick="add('4')">4</button>
+<button class="number" onclick="add('5')">5</button>
+<button class="number" onclick="add('6')">6</button>
+<button class="operator" onclick="add('-')">−</button>
+
+<button class="number" onclick="add('1')">1</button>
+<button class="number" onclick="add('2')">2</button>
+<button class="number" onclick="add('3')">3</button>
+<button class="operator" onclick="add('+')">+</button>
+
+<button class="operator" onclick="plusMinus()">±</button>
+<button class="number" onclick="add('0')">0</button>
+<button class="number" onclick="add('.')">.</button>
+<button class="equal" onclick="calculate()">=</button>
+
+</div>
+
+</div>
+
+<script>
+
+let display=document.getElementById("display");
+
+function add(value){
+display.value+=value;
+}
+
+function clr(){
+display.value="";
+}function backspace(){
+display.value = display.value.slice(0,-1);
+}
+
+function percent(){
+try{
+display.value = eval(display.value)/100;
+}catch{
+display.value = "Error";
+}
+}
+
+function plusMinus(){
+if(display.value==="") return;
+if(display.value.startsWith("-")){
+display.value = display.value.substring(1);
+}else{
+display.value = "-" + display.value;
+}
+}
+
+function calculate(){
+try{
+display.value = eval(display.value);
+}catch{
+display.value = "Error";
+}
+}
+
+</script>
+
+</body>
+</html>
